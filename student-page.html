@@ -1,0 +1,404 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body class="bg-gray-50">
+    
+    <!-- Top Navigation Bar -->
+    <header class="bg-white border-b border-gray-200 px-8 py-4">
+        <div class="flex items-center justify-between">
+            <!-- Logo -->
+            <div>
+                <img src="/images/British School 1.png" alt="The British School" class="h-12">
+            </div>
+
+            <!-- Right Side: Breadcrumb, Bell, User -->
+            <div class="flex items-center gap-8">
+                <!-- Breadcrumb -->
+                <div class="flex items-center gap-2 text-sm text-gray-500">
+                    <span>...Administrator/</span>
+                    <span class="text-orange-500">Students</span>
+                </div>
+
+                <!-- Bell Icon -->
+                <button class="relative">
+                    <i class='bx bx-bell text-2xl text-gray-600'></i>
+                    <span class="absolute top-0 right-0 w-2 h-2 bg-green-500 rounded-full"></span>
+                </button>
+
+                <!-- User Profile -->
+                <div class="flex items-center gap-3">
+                    <img src="/images/user-avatar.png" alt="User" class="w-10 h-10 rounded-full">
+                    <span class="text-gray-700">User</span>
+                    <i class='bx bx-chevron-down text-gray-600'></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="flex">
+        <!-- Left Sidebar -->
+        <aside class="w-24 bg-gray-50 min-h-screen py-8 px-4">
+            <div class="w-16 bg-slate-800 rounded-3xl flex flex-col items-center py-6 gap-6">
+                <!-- Dashboard Icon -->
+
+                <a href="./teachers-page.html">
+                    <div class="w-10 h-10 flex items-center justify-center">
+                    <i class='bx bx-grid-alt text-white text-xl'></i>
+                </div>
+                </a>
+
+
+                <!-- Students Icon (Active) -->
+                <div class="w-12 h-12  rounded-xl flex items-center justify-center">
+                    <img src="/images/active-student.png" alt="">
+                </div>
+
+                <!-- Staff Icon -->
+                <div class="w-10 h-10 flex items-center justify-center">
+                    <i class='bx bx-laptop text-white text-xl'></i>
+                </div>
+
+                <!-- Subjects Icon -->
+                <div class="w-10 h-10 flex items-center justify-center">
+                    <span class="text-white text-lg font-bold">ABC</span>
+                </div>
+
+                <!-- Classes Icon -->
+                <div class="w-10 h-10 flex items-center justify-center">
+                    <i class='bx bx-chalkboard text-white text-xl'></i>
+                </div>
+
+                <!-- Parents Icon -->
+                <div class="w-10 h-10 flex items-center justify-center">
+                    <i class='bx bx-group text-white text-xl'></i>
+                </div>
+
+                <!-- Messages Icon -->
+                <div class="w-10 h-10 flex items-center justify-center">
+                    <i class='bx bx-message-square-dots text-white text-xl'></i>
+                </div>
+
+                <!-- Finance Icon -->
+                <div class="w-10 h-10 flex items-center justify-center">
+                    <i class='bx bx-line-chart text-white text-xl'></i>
+                </div>
+
+                <!-- Reports Icon -->
+                <div class="w-10 h-10 flex items-center justify-center">
+                    <i class='bx bx-file text-white text-xl'></i>
+                </div>
+
+                <!-- Spacer -->
+                <div class="flex-1"></div>
+
+                <!-- Info Icon (Bottom) -->
+                <div class="w-10 h-10 flex items-center justify-center">
+                    <i class='bx bx-info-circle text-white text-xl'></i>
+                </div>
+
+                <!-- Settings Icon (Bottom) -->
+                <div class="w-10 h-10 flex items-center justify-center">
+                    <i class='bx bx-cog text-white text-xl'></i>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="flex-1 p-8">
+            <div class="flex gap-6">
+                <!-- Left Section - Students Table -->
+                <div class="flex-1">
+                    
+                    <!-- Action Buttons -->
+                    <div class="flex justify-end gap-4 mb-6">
+                        <button class="px-6 py-2 border border-gray-300 rounded text-gray-700 text-sm font-medium">
+                            PRINT
+                        </button>
+                        <button class="px-6 py-2 border border-gray-300 rounded text-gray-700 text-sm font-medium flex items-center gap-2">
+                            EXPORT
+                            <i class='bx bx-chevron-down'></i>
+                        </button>
+                        <button class="px-6 py-2 bg-slate-700 text-white rounded text-sm font-medium">
+                            CREATE STUDENT
+                        </button>
+                    </div>
+
+                    <!-- Search & Filters -->
+                    <div class="bg-white p-6 rounded-lg border border-gray-200 mb-6">
+                        <div class="flex items-center gap-4 mb-6">
+                            <!-- Search Bar -->
+                            <div class="relative flex-1">
+                                <i class='bx bx-search absolute left-4 top-3 text-gray-400 text-xl'></i>
+                                <input type="text" placeholder="Search..." 
+                                       class="w-full pl-12 pr-4 py-2 border border-gray-300 rounded-lg">
+                            </div>
+
+                            <!-- Gender Filter -->
+                            <select class="px-4 py-2 border border-gray-300 rounded text-sm text-gray-600">
+                                <option>Gender</option>
+                                <option>Male</option>
+                                <option>Female</option>
+                            </select>
+
+                            <!-- Department Filter -->
+                            <select class="px-4 py-2 border border-gray-300 rounded text-sm text-gray-600">
+                                <option>Department</option>
+                                <option>Science</option>
+                                <option>Technology</option>
+                            </select>
+
+                            <!-- Date Range Filter -->
+                            <select class="px-4 py-2 border border-gray-300 rounded text-sm text-gray-600">
+                                <option>Date range</option>
+                                <option>This week</option>
+                                <option>This month</option>
+                            </select>
+                        </div>
+
+                        <!-- Tabs -->
+                        <div class="flex items-center gap-8 border-b border-gray-200">
+                            <button class="pb-3 border-b-2 border-orange-500 text-gray-700 font-medium text-sm flex items-center gap-2">
+                                ALL
+                                <span class="bg-orange-100 text-orange-600 px-2 py-0.5 rounded text-xs">43</span>
+                            </button>
+                            <button class="pb-3 text-gray-500 text-sm flex items-center gap-2">
+                                PRESENT
+                                <span class="bg-gray-100 text-gray-600 px-2 py-0.5 rounded text-xs">43</span>
+                            </button>
+                            <button class="pb-3 text-gray-500 text-sm flex items-center gap-2">
+                                ALUMNI
+                                <span class="bg-gray-100 text-gray-600 px-2 py-0.5 rounded text-xs">43</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Students Table -->
+                    <div class="bg-white rounded-lg border border-gray-200">
+                        <div class="p-4 border-b border-gray-200">
+                            <p class="text-sm text-gray-500">Showing 1 - 10 of 70 students</p>
+                        </div>
+
+                        <!-- Table -->
+                        <table class="w-full">
+                            <thead class="bg-gray-50">
+                                <tr class="border-b border-gray-200">
+                                    <th class="py-3 px-4 text-left">
+                                        <input type="checkbox" class="w-4 h-4">
+                                    </th>
+                                    <th class="py-3 px-4 text-left text-xs font-semibold text-gray-600 uppercase">
+                                        REF ID
+                                        <i class='bx bx-sort text-gray-400 ml-1'></i>
+                                    </th>
+                                    <th class="py-3 px-4 text-left text-xs font-semibold text-gray-600 uppercase">FIRST NAME</th>
+                                    <th class="py-3 px-4 text-left text-xs font-semibold text-gray-600 uppercase">LAST NAME</th>
+                                    <th class="py-3 px-4 text-left text-xs font-semibold text-gray-600 uppercase">GENDER</th>
+                                    <th class="py-3 px-4 text-left text-xs font-semibold text-gray-600 uppercase">DEPARTMENT</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Row 1 -->
+                                <tr class="border-b border-gray-100">
+                                    <td class="py-4 px-4"><input type="checkbox" class="w-4 h-4"></td>
+                                    <td class="py-4 px-4 text-sm text-gray-700">STU432101</td>
+                                    <td class="py-4 px-4 text-sm text-gray-700">Micheal</td>
+                                    <td class="py-4 px-4 text-sm text-gray-700">Armstrong</td>
+                                    <td class="py-4 px-4 text-sm text-gray-600">Male</td>
+                                    <td class="py-4 px-4 text-sm text-gray-600">Science</td>
+                                </tr>
+                                <!-- Row 2 -->
+                                <tr class="border-b border-gray-100 bg-blue-50">
+                                    <td class="py-4 px-4"><input type="checkbox" class="w-4 h-4"></td>
+                                    <td class="py-4 px-4 text-sm text-gray-700">STU432101</td>
+                                    <td class="py-4 px-4 text-sm text-gray-700">Michelle</td>
+                                    <td class="py-4 px-4 text-sm text-gray-700">Livingston</td>
+                                    <td class="py-4 px-4 text-sm text-gray-600">Female</td>
+                                    <td class="py-4 px-4 text-sm text-gray-600">Technology</td>
+                                </tr>
+                                <!-- Row 3 -->
+                                <tr class="border-b border-gray-100">
+                                    <td class="py-4 px-4"><input type="checkbox" class="w-4 h-4"></td>
+                                    <td class="py-4 px-4 text-sm text-gray-700">STU432101</td>
+                                    <td class="py-4 px-4 text-sm text-gray-700">Micheal</td>
+                                    <td class="py-4 px-4 text-sm text-gray-700">Armstrong</td>
+                                    <td class="py-4 px-4 text-sm text-gray-600">Male</td>
+                                    <td class="py-4 px-4 text-sm text-gray-600">Science</td>
+                                </tr>
+                                <!-- Row 4 -->
+                                <tr class="border-b border-gray-100">
+                                    <td class="py-4 px-4"><input type="checkbox" class="w-4 h-4"></td>
+                                    <td class="py-4 px-4 text-sm text-gray-700">STU432101</td>
+                                    <td class="py-4 px-4 text-sm text-gray-700">Michelle</td>
+                                    <td class="py-4 px-4 text-sm text-gray-700">Livingston</td>
+                                    <td class="py-4 px-4 text-sm text-gray-600">Female</td>
+                                    <td class="py-4 px-4 text-sm text-gray-600">Technology</td>
+                                </tr>
+                                <!-- Row 5 -->
+                                <tr class="border-b border-gray-100">
+                                    <td class="py-4 px-4"><input type="checkbox" class="w-4 h-4"></td>
+                                    <td class="py-4 px-4 text-sm text-gray-700">STU432101</td>
+                                    <td class="py-4 px-4 text-sm text-gray-700">Michelle</td>
+                                    <td class="py-4 px-4 text-sm text-gray-700">Livingston</td>
+                                    <td class="py-4 px-4 text-sm text-gray-600">Female</td>
+                                    <td class="py-4 px-4 text-sm text-gray-600">Technology</td>
+                                </tr>
+                                <!-- Row 6 -->
+                                <tr class="border-b border-gray-100">
+                                    <td class="py-4 px-4"><input type="checkbox" class="w-4 h-4"></td>
+                                    <td class="py-4 px-4 text-sm text-gray-700">STU432101</td>
+                                    <td class="py-4 px-4 text-sm text-gray-700">Michelle</td>
+                                    <td class="py-4 px-4 text-sm text-gray-700">Livingston</td>
+                                    <td class="py-4 px-4 text-sm text-gray-600">Female</td>
+                                    <td class="py-4 px-4 text-sm text-gray-600">Technology</td>
+                                </tr>
+                                <!-- Row 7 -->
+                                <tr class="border-b border-gray-100">
+                                    <td class="py-4 px-4"><input type="checkbox" class="w-4 h-4"></td>
+                                    <td class="py-4 px-4 text-sm text-gray-700">STU432101</td>
+                                    <td class="py-4 px-4 text-sm text-gray-700">Micheal</td>
+                                    <td class="py-4 px-4 text-sm text-gray-700">Armstrong</td>
+                                    <td class="py-4 px-4 text-sm text-gray-600">Male</td>
+                                    <td class="py-4 px-4 text-sm text-gray-600">Science</td>
+                                </tr>
+                                <!-- Row 8 -->
+                                <tr class="border-b border-gray-100">
+                                    <td class="py-4 px-4"><input type="checkbox" class="w-4 h-4"></td>
+                                    <td class="py-4 px-4 text-sm text-gray-700">STU432101</td>
+                                    <td class="py-4 px-4 text-sm text-gray-700">Michelle</td>
+                                    <td class="py-4 px-4 text-sm text-gray-700">Livingston</td>
+                                    <td class="py-4 px-4 text-sm text-gray-600">Female</td>
+                                    <td class="py-4 px-4 text-sm text-gray-600">Technology</td>
+                                </tr>
+                                <!-- Row 9 -->
+                                <tr class="border-b border-gray-100">
+                                    <td class="py-4 px-4"><input type="checkbox" class="w-4 h-4"></td>
+                                    <td class="py-4 px-4 text-sm text-gray-700">STU432101</td>
+                                    <td class="py-4 px-4 text-sm text-gray-700">Micheal</td>
+                                    <td class="py-4 px-4 text-sm text-gray-700">Armstrong</td>
+                                    <td class="py-4 px-4 text-sm text-gray-600">Male</td>
+                                    <td class="py-4 px-4 text-sm text-gray-600">Science</td>
+                                </tr>
+                                <!-- Row 10 -->
+                                <tr>
+                                    <td class="py-4 px-4"><input type="checkbox" class="w-4 h-4"></td>
+                                    <td class="py-4 px-4 text-sm text-gray-700">STU432101</td>
+                                    <td class="py-4 px-4 text-sm text-gray-700">Michelle</td>
+                                    <td class="py-4 px-4 text-sm text-gray-700">Livingston</td>
+                                    <td class="py-4 px-4 text-sm text-gray-600">Female</td>
+                                    <td class="py-4 px-4 text-sm text-gray-600">Technology</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <!-- Pagination -->
+                        <div class="p-4 border-t border-gray-200">
+                            <div class="flex justify-center items-center gap-2">
+                                <button class="w-8 h-8 flex items-center justify-center text-gray-400">
+                                    <i class='bx bx-chevrons-left'></i>
+                                </button>
+                                <button class="w-8 h-8 flex items-center justify-center text-gray-400">
+                                    <i class='bx bx-chevron-left'></i>
+                                </button>
+                                <button class="w-8 h-8 flex items-center justify-center bg-orange-400 text-white rounded">1</button>
+                                <button class="w-8 h-8 flex items-center justify-center text-gray-600">2</button>
+                                <button class="w-8 h-8 flex items-center justify-center text-gray-600">3</button>
+                                <span class="text-gray-400">...</span>
+                                <button class="w-8 h-8 flex items-center justify-center text-gray-600">7</button>
+                                <button class="w-8 h-8 flex items-center justify-center text-gray-400">
+                                    <i class='bx bx-chevron-right'></i>
+                                </button>
+                                <button class="w-8 h-8 flex items-center justify-center text-gray-400">
+                                    <i class='bx bx-chevrons-right'></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Section - Student Details -->
+                <div class="w-80 bg-white p-6 rounded-lg border border-gray-200">
+                    <h3 class="text-lg font-semibold text-gray-700 mb-6">Student Details</h3>
+
+                    <!-- Student Info -->
+                    <div class="space-y-4 mb-8">
+                        <!-- REF ID -->
+                        <div>
+                            <p class="text-xs text-gray-500 mb-1">REF ID</p>
+                            <p class="text-sm font-semibold text-gray-800">STU432101F</p>
+                        </div>
+
+                        <!-- First Name -->
+                        <div>
+                            <p class="text-xs text-gray-500 mb-1">FIRST NAME</p>
+                            <p class="text-sm font-semibold text-gray-800">MICHELLE</p>
+                        </div>
+
+                        <!-- Last Name -->
+                        <div>
+                            <p class="text-xs text-gray-500 mb-1">LAST NAME</p>
+                            <p class="text-sm font-semibold text-gray-800">LIVINGSTON</p>
+                        </div>
+
+                        <!-- Gender -->
+                        <div>
+                            <p class="text-xs text-gray-500 mb-1">GENDER</p>
+                            <p class="text-sm font-semibold text-gray-800">FEMALE</p>
+                        </div>
+
+                        <!-- Email -->
+                        <div>
+                            <p class="text-xs text-gray-500 mb-1">EMAIL</p>
+                            <p class="text-sm text-blue-500">michellelivingston@gmail.com</p>
+                        </div>
+
+                        <!-- Address -->
+                        <div>
+                            <p class="text-xs text-gray-500 mb-1">ADDRESS</p>
+                            <p class="text-sm text-blue-500">No.11 Tony Ave Shomolu Lagos Nigeria</p>
+                        </div>
+
+                        <!-- Department -->
+                        <div>
+                            <p class="text-xs text-gray-500 mb-1">DEPARTMENT</p>
+                            <p class="text-sm font-semibold text-gray-800">TECHNOLOGY</p>
+                        </div>
+
+                        <!-- Class -->
+                        <div>
+                            <p class="text-xs text-gray-500 mb-1">CLASS</p>
+                            <p class="text-sm font-semibold text-gray-800">SS2</p>
+                        </div>
+
+                        <!-- Date Created -->
+                        <div>
+                            <p class="text-xs text-gray-500 mb-1">DATE CREATED</p>
+                            <p class="text-sm font-semibold text-gray-800">25<sup>TH</sup> SEPTEMBER 2015</p>
+                        </div>
+
+                        <!-- Student Status -->
+                        <div>
+                            <p class="text-xs text-gray-500 mb-1">STUDENT STATUS</p>
+                            <p class="text-sm font-semibold text-green-500">CURRENT</p>
+                        </div>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="flex gap-4">
+                        <button class="flex-1 px-6 py-3 border border-gray-300 rounded text-gray-700 text-sm font-medium">
+                            EDIT
+                        </button>
+                        <button class="flex-1 px-6 py-3 border border-red-300 rounded text-red-600 text-sm font-medium">
+                            DELETE
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+</body>
+</html>
